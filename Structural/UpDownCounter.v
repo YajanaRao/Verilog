@@ -8,7 +8,7 @@ module UpDownCounter(clk,mode, count);
     output [3:0] count;
     reg [3:0] count = 0;  
 
-    reg [24:0] clkdiv = 0;
+    reg [24:0] clkdiv;
     
     initial count = 0;
 
@@ -24,7 +24,7 @@ module UpDownCounter(clk,mode, count);
                 //Decrement counter
         end    
     
-    always @(posedge clkdiv)
+    always @(posedge clk)
         clkdiv = clkdiv + 1;
 
 
